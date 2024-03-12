@@ -208,14 +208,14 @@
 	<nav
 		class=" grid max-h-screen grid-cols-1 grid-rows-[auto,1fr,auto] overflow-hidden *:w-[280px] max-md:hidden"
 	>
-		/**<NavMenu
+		<!--<NavMenu
 			conversations={data.conversations}
 			user={data.user}
 			canLogin={data.user === undefined && data.loginEnabled}
 			on:shareConversation={(ev) => shareConversation(ev.detail.id, ev.detail.title)}
 			on:deleteConversation={(ev) => deleteConversation(ev.detail)}
 			on:editConversationTitle={(ev) => editConversationTitle(ev.detail.id, ev.detail.title)}
-		/>**/
+		/>-->
 	</nav>
 	{#if currentError}
 		<Toast message={currentError} />

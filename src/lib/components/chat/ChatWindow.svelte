@@ -347,41 +347,6 @@
 					</div>
 				{/if}
 			</form>
-			<div
-				class="mt-2 flex justify-between self-stretch px-1 text-xs text-gray-400/90 max-md:mb-2 max-sm:gap-2"
-			>
-				<p>
-					Model:
-					{#if !assistant}
-						<a href="{base}/settings/{currentModel.id}" class="hover:underline"
-							>{currentModel.displayName}</a
-						>{:else}
-						{@const model = models.find((m) => m.id === assistant?.modelId)}
-						<a
-							href="{base}/settings/assistants/{assistant._id}"
-							class="inline-flex items-center border-b hover:text-gray-600 dark:border-gray-700 dark:hover:text-gray-300"
-							>{model?.displayName}<CarbonCaretDown class="text-xxs" /></a
-						>{/if} <span class="max-sm:hidden">·</span><br class="sm:hidden" /> Generated content may
-					be inaccurate or false.
-				</p>
-				{#if messages.length}
-					<button
-						class="flex flex-none items-center hover:text-gray-400 max-sm:rounded-lg max-sm:bg-gray-50 max-sm:px-2.5 dark:max-sm:bg-gray-800"
-						type="button"
-						class:hover:underline={!isSharedRecently}
-						on:click={onShare}
-						disabled={isSharedRecently}
-					>
-						{#if isSharedRecently}
-							<CarbonCheckmark class="text-[.6rem] sm:mr-1.5 sm:text-green-600" />
-							<div class="text-green-600 max-sm:hidden">Link copied to clipboard</div>
-						{:else}
-							<CarbonExport class="text-[.6rem] sm:mr-1.5 sm:text-primary-500" />
-							<div class="max-sm:hidden">Share this conversation</div>
-						{/if}
-					</button>
-				{/if}
-			</div>
 		</div>
 	</div>
 </div>
